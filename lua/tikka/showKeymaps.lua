@@ -5,14 +5,18 @@ local function readKeymapFile()
     -- Modify this function to read your keymap file
     return [[
     motions:
+    s: delete selected go insert mode
     A: end of the line with insert mode
     I: start of the line with insert mode
     O: above the line with insert mode
     o: under the line with insert mode
+    <C-ws>:  new horizontal window
+    <C-wv>:  new vertical window
     <C-ww>: window change
     <C-t>: open/hide terminal
     when highlighted, move whole line or paragraph wit J/K
     <C-d>/<C-u>: jump around file
+    / search for words in a file
 
 comment:
     gcc comment/uncomment current line 
@@ -44,6 +48,7 @@ undotree:
     <leader>u
 
 other keymaps:
+    K show info about variable etc.
     u undo
     y yank
     p paste
@@ -56,6 +61,8 @@ other keymaps:
     <leader>s change all words(where my cursor was) in this file
     <leader>x make current file executable
     D on file manager deletes the file
+    d for creating a directory
+    % for creating a new file
     ]]
 end
 

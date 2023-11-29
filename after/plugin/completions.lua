@@ -18,6 +18,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'quick_lint_js.setup' },
+        { name = 'vscode-html-languageserver' },
     }, {
         { name = 'buffer' },
     }),

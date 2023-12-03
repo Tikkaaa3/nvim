@@ -22,4 +22,7 @@ cmp.setup({
     }, {
         { name = 'buffer' },
     }),
+    formatting = {
+        format = require("tailwindcss-colorizer-cmp").formatter
+    }
 })

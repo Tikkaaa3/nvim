@@ -43,6 +43,7 @@ telescope:
     <C-p> find git files
     <leader>ps grep
     <leader>fg live grep
+    <leader>fb file browser
 
 undotree:
     <leader>u

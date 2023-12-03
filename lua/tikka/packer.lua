@@ -12,19 +12,15 @@ return require('packer').startup(function(use)
   -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'},
     { "nvim-telescope/telescope-live-grep-args.nvim" },
-},
+    { "nvim-telescope/telescope-file-browser.nvim"}
+
+    },
   config = function()
     require("telescope").load_extension("live_grep_args")
+    require("telescope").load_extension "file_browser"
   end
   }
 
-  use ({
-	'rose-pine/neovim',
-	as = 'rose-pine',
-	config = function()
-	vim.cmd('colorscheme rose-pine')
-	end
-  })
    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
    use('nvim-treesitter/playground')
    use('ThePrimeagen/harpoon')
@@ -46,6 +42,11 @@ return require('packer').startup(function(use)
     {'L3MON4D3/LuaSnip'},
   }
 }
+use { 'windwp/nvim-ts-autotag',
+ config = function()
+     require('nvim-ts-autotag').setup()
+ end}
+
 use {
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
@@ -79,5 +80,16 @@ use {
         require('Comment').setup()
     end
 }
-
+use "nvim-lua/plenary.nvim"
+use 'm4xshen/autoclose.nvim'
+use({
+  "roobert/tailwindcss-colorizer-cmp.nvim",
+  -- optionally, override the default options:
+  config = function()
+    require("tailwindcss-colorizer-cmp").setup({
+      color_square_width = 2,
+    })
+  end
+})
+use 'norcalli/nvim-colorizer.lua'
 end)

@@ -5,6 +5,10 @@ local function readKeymapFile()
     -- Modify this function to read your keymap file
     return [[
     motions:
+    <C-o>: go to previous location
+    <C-i>: go forward location
+    gd: jump to definition
+    gf: go to file
     s: delete selected go insert mode
     A: end of the line with insert mode
     I: start of the line with insert mode
@@ -12,11 +16,16 @@ local function readKeymapFile()
     o: under the line with insert mode
     <C-ws>:  new horizontal window
     <C-wv>:  new vertical window
+    v: new vertical window on file manager
     <C-ww>: window change
     <C-t>: open/hide terminal
     when highlighted, move whole line or paragraph wit J/K
     <C-d>/<C-u>: jump around file
     / search for words in a file
+
+fold:
+    zf: fold selected
+    za: toggle fold, close and open. first use zf.
 
 comment:
     gcc comment/uncomment current line 
@@ -49,6 +58,7 @@ undotree:
     <leader>u
 
 other keymaps:
+    cd in file browser makes browsing directory the current directory
     K show info about variable etc.
     u undo
     y yank
